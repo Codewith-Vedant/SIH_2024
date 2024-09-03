@@ -1,0 +1,64 @@
+ /* Custom styling for the line */
+ .l1 {
+    position: absolute;
+    width: calc(100% - 90px); /* Adjust to fit the container */
+    height: 1px; /* Line thickness */
+    left: 70px; /* Adjust based on your layout */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transform: rotate(-0.09deg);
+}
+/* Adjust the top positioning for lines before and after sections */
+.line-before {
+    top: 1250px; /* Adjust position before features section */
+}
+.line-after {
+    top: 598px; /* Adjust position after features section */
+}
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 15rem; /* Space between features */
+}
+.features-container .feature {
+    max-width: 400px; /* Increased width */
+    width: 100%; /* Ensure the box uses the full width allowed */
+    height: 500px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
+    overflow: hidden; /* Ensure image and text stay within the box */
+}
+.features-container .feature img {
+    width: 100%;
+    height: 100%; /* Maintain aspect ratio */
+    max-height: 100%; /* Limit image height to ensure text fits well */
+    object-fit: cover; /* Ensure image covers the area */
+}
+.features-container .feature h3 {
+    text-align: center; /* Center text inside feature box */
+    font-size: 1.25rem; /* Adjust font size */
+    margin-top: 1rem;
+}
+.features-title {
+    text-align: left; /* Align title to the left */
+    margin-left: 70px; /* Adjust spacing from the left */
+}
+.empty{
+    height: 200px;
+    box-sizing: border-box;
+}
+.custom-button {
+    background-color: #000;
+    color: #fff;
+    font-size: 1.25rem; /* Increase font size */
+    padding: 1rem 2rem; /* Increase padding for a larger button */
+    border-radius: 9999px; /* Ensure rounded shape */
+    transition: transform 0.3s ease;
+}
+.custom-button:hover {
+    transform: scale(1.1); /* Slightly increase scale on hover */
+}

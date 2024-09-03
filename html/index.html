@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranavya</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <!-- Header Section -->
+        <!-- Line after Features Section -->
+        <div class="l1 line-after"></div>
+    <header class="flex justify-between items-center p-4">
+        <img src="../images/logo.jpg" alt="Logo" height="130px" width="150px"> <!-- Replace with your logo -->
+        <nav class="space-x-6">
+            <button id="homeBtn" class="text-black hover:text-gray-500 focus:outline-none">HOME</button>
+            <button id="aboutUsBtn" class="text-black hover:text-gray-500 focus:outline-none">ABOUT US</button>
+        </nav>
+    </header>
+
+    <!-- Line before Features Section -->
+    <div class="l1 line-before"></div>
+
+    <!-- Main Section -->
+    <main class="flex justify-between items-center mt-8 p-4">
+        <div class="text-left max-w-lg" style="margin-left: 8%;">
+            <h1 class="text-6xl font-serif font-bold slide-up">Pranavya</h1>
+            <p class="text-lg font-light mt-4 mb-8 slide-up">
+                A web-based tool for Mapping Bharat's Air: AI-Powered Localized Air Quality Insights from Satellite Data
+            </p>
+        </div>
+        <img src="../images/Satellite.jpg" alt="Satellite Image" class="w-3/5 slide-up" style="width: 587px; height: 391px;"> <!-- Replace with your satellite image -->
+    </main>
+
+    <!-- Features Section -->
+    <section class="mt-12 text-center slide-up">
+        <h2 class="text-2xl font-semibold features-title mb-6">What our tool provides</h2>
+        <div class="features-container">
+            <div class="feature bg-white shadow-md rounded-lg">
+                <img src="../images/Contributions-of-emissions-Figure-E4.jpg" alt="Quality Air Mapping" class="w-full h-48 object-cover rounded-t-lg"> <!-- Replace with your air quality map -->
+                <h3 class="text-lg font-medium mt-4 mb-4">Quality Air Mapping</h3>
+            </div>
+            <div class="feature bg-white shadow-md rounded-lg">
+                <img src="../images/OIP.jpeg" alt="Cloud-Cover Air Quality Prediction" class="w-full h-48 object-cover rounded-t-lg"> <!-- Replace with your cloud cover prediction -->
+                <h3 class="text-lg font-medium mt-4 mb-4">Cloud-Cover Air Quality Prediction</h3>
+            </div>
+        </div>
+    </section>
+    
+<br><br>
+    <!-- Call to Action Button -->
+    <div class="text-center mt-12 slide-up">
+        <a href="./tool.html">
+        <button id="getStartedBtn" class="custom-button bg-black text-white text-lg px-6 py-3 rounded-full">
+            Click to get started &rarr;
+        </button>
+        </a>
+    </div>
+<div class="empty"></div>
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Add sliding effect to elements
+        function handleScroll() {
+            const elements = document.querySelectorAll('.slide-up');
+            const viewportHeight = window.innerHeight;
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < viewportHeight - 50) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Trigger scroll effect on page load and scroll
+        window.addEventListener('load', handleScroll);
+        window.addEventListener('scroll', handleScroll);
+    </script>
+</body>
+</html>
