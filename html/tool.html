@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body class="font-sans">
+
+    <!-- Header Section -->
+    <header class="flex justify-between items-center p-5 bg-gray-100">
+        <img src="../images/logo.jpg" alt="Logo" height="130px" width="150px">
+        <nav class="space-x-6">
+            <button id="homeBtn" class="bg-white-500 hover:bg-black-400 text-black font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-black-500 rounded">DASHBOARD</button>
+            <button id="aboutUsBtn" class="text-black hover:text-gray-500 focus:outline-none">ABOUT US</button>
+        </nav>
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="text-center mt-10">
+        <h1 class="text-6xl font-serif font-bold slide-up">Pranavya</h1><br>
+        <div class="flex justify-center items-center space-x-4 mb-4">
+            <select id="parameterSelect" class="border border-gray-400 px-4 py-2 text-lg">
+                <option value="aerosol">Aerosol Index</option>
+                <option value="cloud">Cloud Fraction</option>
+                <option value="no2_slant">NO₂ Slant Column Number Density</option>
+                <option value="tropo_no2">Tropospheric NO₂ Column Number Density</option>
+            </select>
+            <span class="text-3xl">NO₂</span>
+        </div>
+
+        <!-- Map Image -->
+        <div class="flex justify-center">
+            <img id="mapImage" src="../images/Contributions-of-emissions-Figure-E4.jpg" alt="Map" class="border border-gray-400">
+        </div>
+    </main>
+
+    <!-- Script to handle selection change -->
+    <script>
+        document.getElementById('parameterSelect').addEventListener('change', function () {
+            const mapImage = document.getElementById('mapImage');
+            switch (this.value) {
+                case 'aerosol':
+                    mapImage.src = '../images/Contributions-of-emissions-Figure-E4.jpg';
+                    break;
+                case 'cloud':
+                    mapImage.src = '../images/cloud.jpeg';
+                    break;
+                case 'no2_slant':
+                    mapImage.src = '../images/OIP.jpeg';
+                    mapImage.width = 1000;
+                    mapImage.height = 1000;
+                    break;
+                case 'tropo_no2':
+                    mapImage.src = '../images/Tropo_new.png';
+                    break;
+                default:
+                    alert('Nahi hai');
+                    window.location.assign("./index.html");
+            }
+        });
+    </script>
 </body>
+
 </html>
